@@ -1,6 +1,6 @@
 {
   "name": "@20chan/panzoom",
-  "version": "9.4.4",
+  "version": "9.4.5",
   "description": "panzoom, but pan except for left click",
   "main": "index.js",
   "scripts": {
