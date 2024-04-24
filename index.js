@@ -122,7 +122,7 @@ function createPanZoom(domElement, options) {
     dispose: dispose,
     moveBy: internalMoveBy,
     moveTo: moveTo,
-    smoothMoveTo: smoothMoveTo, 
+    smoothMoveTo: smoothMoveTo,
     centerOn: centerOn,
     zoomTo: publicZoomTo,
     zoomAbs: zoomAbs,
@@ -150,12 +150,12 @@ function createPanZoom(domElement, options) {
   };
 
   eventify(api);
-  
+
   var initialX = typeof options.initialX === 'number' ? options.initialX : transform.x;
   var initialY = typeof options.initialY === 'number' ? options.initialY : transform.y;
   var initialZoom = typeof options.initialZoom === 'number' ? options.initialZoom : transform.scale;
 
-  if(initialX != transform.x || initialY != transform.y || initialZoom != transform.scale){
+  if (initialX != transform.x || initialY != transform.y || initialZoom != transform.scale) {
     zoomAbs(initialX, initialY, initialZoom);
   }
 
@@ -450,7 +450,7 @@ function createPanZoom(domElement, options) {
     internalMoveBy(dx, dy, true);
   }
 
-  function smoothMoveTo(x, y){
+  function smoothMoveTo(x, y) {
     internalMoveBy(x - transform.x, y - transform.y, true);
   }
 
@@ -720,7 +720,7 @@ function createPanZoom(domElement, options) {
     var l = Math.sqrt(dx * dx + dy * dy);
     if (l > 5) return; // probably they are panning, ignore it
 
-    pendingClickEventTimeout = setTimeout(function() {
+    pendingClickEventTimeout = setTimeout(function () {
       pendingClickEventTimeout = 0;
       options.onClick(e);
     }, doubleTapSpeedInMS);
@@ -791,7 +791,7 @@ function createPanZoom(domElement, options) {
     // for Firefox, left click == 0
     var isLeftButton =
       (e.button === 1 && window.event !== null) || e.button === 0;
-    if (!isLeftButton) return;
+    if (isLeftButton) return;
 
     smoothScroll.cancel();
 
@@ -1098,4 +1098,3 @@ function autoRun() {
 }
 
 autoRun();
-	

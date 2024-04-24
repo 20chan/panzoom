@@ -1,4 +1,4 @@
-declare module "panzoom" {
+declare module "@20chan/panzoom" {
   interface Bounds {
     left: number;
     top: number;
